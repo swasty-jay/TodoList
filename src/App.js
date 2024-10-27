@@ -42,11 +42,21 @@ function App() {
 
   return (
     <div className={`app ${darkMode ? "dark" : "light"}`}>
-      <header>
+      <header className="p-3 mb-2 bg-primary-subtle text-primary-emphasis">
         <h1>Todo List</h1>
-        <button onClick={toggleDarkMode}>
-          {darkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
-        </button>
+        <div className="form-check form-switch">
+          <input
+            className="form-check-input"
+            type="checkbox"
+            role="switch"
+            id="flexSwitchCheckDefault"
+            checked={darkMode}
+            onChange={toggleDarkMode}
+          />
+          <label className="form-check-label" htmlFor="flexSwitchCheckDefault">
+            {darkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
+          </label>
+        </div>
       </header>
 
       <div className="task-input">
@@ -62,7 +72,12 @@ function App() {
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
-        <button onClick={addTask}>Add Task</button>
+        <button
+          class="d-inline-flex focus-ring focus-ring-secondary py-1 px-2 text-decoration-none border rounded-2"
+          onClick={addTask}
+        >
+          Add Task
+        </button>
       </div>
 
       <input

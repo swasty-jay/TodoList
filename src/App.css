@@ -13,6 +13,16 @@ header {
   margin-bottom: 20px;
 }
 
+.form-check-input {
+  transform: scale(1.5); /* Adjust this value to make the switch larger */
+  width: 7em; /* Increase the width */
+  height: 1em;
+}
+
+.form-check-label {
+  font-size: 1.2rem; /* Increase font size of the label if needed */
+  margin-left: 0.5em; /* Space between the switch and label */
+}
 .task-input {
   display: flex;
   gap: 10px;
