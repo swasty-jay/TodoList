@@ -6,7 +6,7 @@ function App() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [darkMode, setDarkMode] = useState(false);
-  const [filter, setFilter] = useState(""); // For task filtering
+  const [filter, setFilter] = useState("");
 
   // Add a new task
   const addTask = () => {
@@ -54,7 +54,7 @@ function App() {
             onChange={toggleDarkMode}
           />
           <label className="form-check-label" htmlFor="flexSwitchCheckDefault">
-            {darkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
+            {darkMode ? "Light Mode" : "Dark Mode"}
           </label>
         </div>
       </header>
@@ -97,7 +97,9 @@ function App() {
             <button onClick={() => toggleCompletion(task.id)}>
               {task.completed ? "Undo" : "Complete"}
             </button>
-            <button onClick={() => deleteTask(task.id)}>Delete</button>
+            <button className="delete" onClick={() => deleteTask(task.id)}>
+              &times;
+            </button>
           </li>
         ))}
       </ul>
